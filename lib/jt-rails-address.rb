@@ -36,7 +36,7 @@ module JT::Rails::Address
 		geocoder = Graticule.service(:google).new(google_api_key)
 
 		begin
-			request_params = options.merge({ address: text })
+			request_params = options.merge({ address: text, key: google_api_key })
 			response = geocoder.send('make_url', request_params).open('User-Agent' => Graticule::Geocoder::Base::USER_AGENT).read
 			json = JSON.parse(response)
 
