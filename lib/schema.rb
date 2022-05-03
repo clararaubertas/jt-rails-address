@@ -4,6 +4,7 @@ module JT::Rails::Address::Schema
 		formatted_address: :string,
 		street_number: :string,
 		street_name: :string,
+		unit_no: :string,
 		street: :string,
 		city: :string,
 		zip_code: :string,
