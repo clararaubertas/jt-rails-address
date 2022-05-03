@@ -74,8 +74,10 @@ module JT::Rails::Address
 			end
 
 			if !data['street_name'].blank?
-				if !data['street_number'].blank?
-					data['street'] = "#{data['street_number']} #{data['street_name']}"
+				if !data['unit_no'].blank? && !data['street_number'].blank?
+					                                        data['street'] = "#{data['street_number']} #{data['street_name']} #{data['unit_no'} "
+				elsif !data['street_number'].blank?
+					data['street'] = "#{data['street_number']} #{data['street_name']} "
 				else
 					data['street'] = data['street_name']
 				end
